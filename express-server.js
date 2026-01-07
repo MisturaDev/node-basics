@@ -1,7 +1,13 @@
 const express = require("express");
 const app = express();
-app.use(express.json());
 const PORT = 3000;
+
+// Middleware
+app.use(express.json());
+
+//Routes
+const profileRoutes = require("./routes/profileRoutes");
+app.use("/api", profileRoutes);
 
 //Home route
 app.get("/", (req, res) => {
@@ -18,20 +24,6 @@ app.get("/api", (req, res) => {
     res.json({message: "Hello from Express API"});
 });
 
-app.post("/api/profile", (req, res) => {
-    const { name, role } = req.body;
-
-    //Validation
-    if (!name || !role) {
-        return res.status(400).json({ message: "Name and role are required"});
-        }
-    
-        //if data is valid
-        res.status(201).json({
-        message: "Profile created successfully",
-        data: { name, role },
-    });
-});
 
 //404 route
 app.use((req, res) => {
