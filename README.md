@@ -1,11 +1,10 @@
 # Node Basics
 
-**Learning Node.js step by step**
+**Learning Node.js step by step including Express, routes, controllers, validation and working with Node’s built-in modules like OS.**
 
 ---
 
 ## Description
-Learning Node.js basics, including Express, routes, controllers, validation and working with Node’s built-in modules like OS.
 
 This repository contains my experiments and exercises while learning Node.js.  
 It includes:
