@@ -2,6 +2,10 @@
 
 **Learning Node.js step by step — basics, modules and small projects.**
 
+Description
+
+Learning Node.js basics, including Express, routes, controllers, validation and working with Node’s built-in modules like OS.
+
 This repository contains my experiments and exercises while learning Node.js.  
 It includes:
 
@@ -29,7 +33,7 @@ It includes:
 
 4. Run the project:
    ```bash
-   node index.js
+   node express-server.js
 
 ---
 
