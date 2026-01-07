@@ -19,33 +19,22 @@ It includes:
 
 **Features Implemented**
 1. Profile API
-
   - POST /api/profiles
-
   - Creates a user profile with name and role
-
   - Validation: Returns 400 if name or role is missing
-
   - Structured using controllers and routes
 
 2. OS Info API
-
   - GET /api/os
-
   - Returns system information using Node’s built-in os module
-
-  - Data includes OS type, platform, architecture, CPU cores, memory, and uptime
+  - Data includes OS type, platform, architecture, CPU cores, memory and uptime
 
 3. Basic Routes
-
   - GET / → Welcome Home Page
-
   - GET /about → About Page
-
   - GET /api → Simple JSON API
 
 4. 404 Route
-
   - Returns page not found for all unmatched routes
 
 ---
@@ -62,7 +51,7 @@ It includes:
 
 3. Install dependencies:
    ```bash
-   npm init -y
+   npm install
 
 4. Run the project:
    ```bash
