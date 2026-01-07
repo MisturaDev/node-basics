@@ -1,42 +1,11 @@
 # Node Basics
 
-**Learning Node.js step by step — basics, modules and small projects.**
+**Learning Node.js step by step**
 
 ---
 
 ## Description
 Learning Node.js basics, including Express, routes, controllers, validation and working with Node’s built-in modules like OS.
-
-**Features Implemented**
-1. Profile API
-
-- POST /api/profiles
-
-- Creates a user profile with name and role
-
-- Validation: Returns 400 if name or role is missing
-
-- Structured using controllers and routes
-
-2. OS Info API
-
-- GET /api/os
-
-- Returns system information using Node’s built-in os module
-
-- Data includes OS type, platform, architecture, CPU cores, memory, and uptime
-
-3. Basic Routes
-
-- GET / → Welcome Home Page
-
-- GET /about → About Page
-
-- GET /api → Simple JSON API
-
-4. 404 Route
-
-- Returns page not found for all unmatched routes
 
 This repository contains my experiments and exercises while learning Node.js.  
 It includes:
@@ -46,6 +15,38 @@ It includes:
 - Creating and running Node projects
 - Understanding npm and package.json
 - Small practice projects for learning backend development
+
+
+**Features Implemented**
+1. Profile API
+
+  - POST /api/profiles
+
+  - Creates a user profile with name and role
+
+  - Validation: Returns 400 if name or role is missing
+
+  - Structured using controllers and routes
+
+2. OS Info API
+
+  - GET /api/os
+
+  - Returns system information using Node’s built-in os module
+
+  - Data includes OS type, platform, architecture, CPU cores, memory, and uptime
+
+3. Basic Routes
+
+  - GET / → Welcome Home Page
+
+  - GET /about → About Page
+
+  - GET /api → Simple JSON API
+
+4. 404 Route
+
+  - Returns page not found for all unmatched routes
 
 ---
 
