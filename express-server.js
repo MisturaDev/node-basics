@@ -5,9 +5,14 @@ const PORT = 3000;
 // Middleware
 app.use(express.json());
 
-//Routes
+//Profile Route
 const profileRoutes = require("./routes/profileRoutes");
 app.use("/api", profileRoutes);
+
+//os route
+const osRoutes = require("./routes/osRoutes");
+app.use("/api", osRoutes);
+
 
 //Home route
 app.get("/", (req, res) => {
