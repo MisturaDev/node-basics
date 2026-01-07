@@ -20,12 +20,16 @@ app.get("/api", (req, res) => {
 
 app.post("/api/profile", (req, res) => {
     const { name, role } = req.body;
-    res.json({
+
+    //Validation
+    if (!name || !role) {
+        return res.status(400).json({ message: "Name and role are required"});
+        }
+    
+        //if data is valid
+        res.status(201).json({
         message: "Profile created successfully",
-        data:{
-        name,
-        role,
-        },
+        data: { name, role },
     });
 });
 
