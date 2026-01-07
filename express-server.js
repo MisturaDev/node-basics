@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+app.use(express.json());
 const PORT = 3000;
 
 //Home route
@@ -15,6 +16,17 @@ app.get("/about", (req, res) => {
 //API route
 app.get("/api", (req, res) => {
     res.json({message: "Hello from Express API"});
+});
+
+app.post("/api/profile", (req, res) => {
+    const { name, role } = req.body;
+    res.json({
+        message: "Profile created successfully",
+        data:{
+        name,
+        role,
+        },
+    });
 });
 
 //404 route
