@@ -70,6 +70,7 @@ PORT=5000
 GREETING_MESSAGE="Hello from Node.js API!"
 DEFAULT_ROLE="Junior Developer"
 
+---
 
 How it works:
 - PORT: sets which port the server runs on (fallback to 3000 if missing)
