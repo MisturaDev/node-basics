@@ -15,6 +15,7 @@ It includes:
 - Understanding npm and package.json
 - Small practice projects for learning backend development
 
+---
 
 **Features Implemented**
 1. Profile API
@@ -22,6 +23,7 @@ It includes:
   - Creates a user profile with name and role
   - Validation: Returns 400 if name or role is missing
   - Structured using controllers and routes
+  - Supports default role from .env (DEFAULT_ROLE) if role is not provided
 
 2. OS Info API
   - GET /api/os
@@ -58,6 +60,28 @@ It includes:
 
 ---
 
+Environment Variables (.env)
+
+This project uses environment variables to keep configuration and defaults flexible and secure.
+
+Example .env file:
+```bash
+PORT=5000
+GREETING_MESSAGE="Hello from Node.js API!"
+DEFAULT_ROLE="Junior Developer"
+
+
+How it works:
+- PORT: sets which port the server runs on (fallback to 3000 if missing)
+- GREETING_MESSAGE: customizes the Home route message without touching code
+- DEFAULT_ROLE: used in Profile API when the role is not provided in the request
+
+Tips:
+- Never commit .env with secrets to GitHub — it’s included in .gitignore
+- Restart your server after updating .env variables
+
+---
+
 ## Lessons Learned
 
 - Node.js runtime basics
@@ -75,6 +99,8 @@ It includes:
 - Using Node built-in modules (OS)
 
 - Git commits & version control
+
+- Using environment variables (.env) for configurable defaults
 
 ---
 
