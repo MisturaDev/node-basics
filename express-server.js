@@ -1,41 +1,41 @@
+// Load environment variables at the very top
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
-const PORT = 3000;
+
+// Use PORT from .env or fallback to 3000
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
 
-//Profile Route
+// Routes
 const profileRoutes = require("./routes/profileRoutes");
 app.use("/api", profileRoutes);
 
-//os route
 const osRoutes = require("./routes/osRoutes");
 app.use("/api", osRoutes);
 
-
-//Home route
+// Basic routes
 app.get("/", (req, res) => {
-    res.send("Welcome to the Express Home Page");
+    res.send(process.env.GREETING_MESSAGE || "Welcome to the Express Home Page");
 });
 
-//About route
 app.get("/about", (req, res) => {
     res.send("This is the Express About Page");
 });
 
-//API route
 app.get("/api", (req, res) => {
-    res.json({message: "Hello from Express API"});
+    res.json({ message: "Hello from Express API" });
 });
 
-
-//404 route
+// 404 handler
 app.use((req, res) => {
     res.status(404).send("page not found");
 });
 
-//Start server
+// Start server
 app.listen(PORT, () => {
     console.log(`Express server running on http://localhost:${PORT}`);
 });
