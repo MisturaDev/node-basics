@@ -61,14 +61,13 @@ It includes:
 ---
 
 Environment Variables (.env)
-
 This project uses environment variables to keep configuration and defaults flexible and secure.
 
 Example .env file:
-```bash
-PORT=5000
-GREETING_MESSAGE="Hello from Node.js API!"
-DEFAULT_ROLE="Junior Developer"
+   ```bash
+   PORT=5000
+   GREETING_MESSAGE="Hello from Node.js API!"
+   DEFAULT_ROLE="Junior Developer"
 
 ---
 
