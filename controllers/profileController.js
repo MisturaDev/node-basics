@@ -1,27 +1,41 @@
 const Profile = require("../models/Profile");
 
+// CREATE profile
 const createProfile = async (req, res) => {
   const { name, role } = req.body;
 
-  // Validation
   if (!name) {
     return res.status(400).json({ message: "Name is required" });
   }
 
-  // Use default role if not provided
-  const finalRole = role || process.env.DEFAULT_ROLE;
-
   try {
-    const profile = new Profile({ name, role: finalRole });
-    await profile.save(); // save to MongoDB
+    const profile = new Profile({
+      name,
+      role: role || process.env.DEFAULT_ROLE,
+    });
+
+    await profile.save();
 
     res.status(201).json({
       message: "Profile created successfully",
       data: profile,
     });
-  } catch (err) {
-    res.status(500).json({ message: "Server error", error: err.message });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 };
 
-module.exports = { createProfile };
+// GET all profiles
+const getProfiles = async (req, res) => {
+  try {
+    const profiles = await Profile.find().sort({ createdAt: -1 });
+    res.json(profiles);
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+module.exports = {
+  createProfile,
+  getProfiles,
+};
